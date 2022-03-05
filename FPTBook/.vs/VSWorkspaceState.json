@@ -4,8 +4,10 @@
     "\\Project8",
     "\\Project8\\Controllers",
     "\\Project8\\Models",
-    "\\Project8\\Models\\Data"
+    "\\Project8\\Models\\Data",
+    "\\Project8\\Views",
+    "\\Project8\\Views\\User"
   ],
-  "SelectedNode": "\\Project8\\Models\\Data\\KhachHang.cs",
+  "SelectedNode": "\\Project8\\Views\\User\\Login.cshtml",
   "PreviewInSolutionExplorer": false
 }
