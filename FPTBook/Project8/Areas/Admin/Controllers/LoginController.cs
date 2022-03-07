@@ -81,12 +81,12 @@ namespace WebBanSach.Areas.Admin.Controllers
                 //nếu tài khoản không tồn tại
                 else if (result == 0)
                 {
-                    ModelState.AddModelError("", "Tài khoản không tồn tại.");
+                    ModelState.AddModelError("", "Account does not exist.");
                 }
                 //nếu nhập sai tài khoản hoặc mật khẩu
                 else if (result == -1)
                 {
-                    ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không chính xác");
+                    ModelState.AddModelError("", "Incorrect account or password, please check and collect again");
                 }
             }
 

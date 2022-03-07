@@ -5,21 +5,21 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi tiết đơn hàng</h2>
+<h2>Oder Detail</h2>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DonDatHang.MaDDH)
+            Order ID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sach.TenSach)
+            Book Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SoLuong)
+            Quantity
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DonGia)
+            Total Price 
         </th>
     </tr>
 
@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.SoLuong)
         </td>
         <td>
-            <p>@String.Format("{0:0,0}", item.DonGia) VND</p>
+            <p>@String.Format("{0:0,0}", item.DonGia) $</p>
         </td>
     </tr>
 }
@@ -43,5 +43,5 @@
 </table>
 
 <div>
-    @Html.ActionLink("Trở về", "Order")
+    @Html.ActionLink("Back", "Order")
 </div>

@@ -11,21 +11,21 @@ namespace WebBanSach.Areas.Admin.Models
     {
         //Call a LoginModel to equal with Admin in Models
 
-        [Required(ErrorMessage = "Bạn chưa nhập tài khoản")]
-        [Display(Name ="Tài khoản")]
+        [Required(ErrorMessage = "You have not entered Account")]
+        [Display(Name ="Account")]
         public string TaiKhoan { get; set; }
 
-        [Required(ErrorMessage = "Bạn chưa nhập mật khẩu")]
-        [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage = "You have not entered Password")]
+        [Display(Name = "Password")]
         public string MatKhau { get; set; }
 
-        [Display(Name = "Ghi nhớ")]
+        [Display(Name = "Remember")]
         public bool? GhiNho { get; set; }
 
-        [Display(Name = "Họ tên")]
+        [Display(Name = "Fullname")]
         public string HoTen { get; set; }
 
-        [Display(Name = "Trạng thái")]
+        [Display(Name = "Status")]
         public bool? TrangThai { get; set; }
     }
 }

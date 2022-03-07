@@ -2,12 +2,17 @@
   "ExpandedNodes": [
     "",
     "\\Project8",
-    "\\Project8\\Controllers",
+    "\\Project8\\Areas",
+    "\\Project8\\Areas\\Admin",
+    "\\Project8\\Areas\\Admin\\Views",
+    "\\Project8\\Areas\\Admin\\Views\\Home",
     "\\Project8\\Models",
-    "\\Project8\\Models\\Data",
+    "\\Project8\\Models\\Process",
     "\\Project8\\Views",
+    "\\Project8\\Views\\Cart",
+    "\\Project8\\Views\\Shared",
     "\\Project8\\Views\\User"
   ],
-  "SelectedNode": "\\Project8\\Views\\User\\Login.cshtml",
+  "SelectedNode": "\\Project8\\Areas\\Admin\\Views\\Home\\AddAuthor.cshtml",
   "PreviewInSolutionExplorer": false
 }

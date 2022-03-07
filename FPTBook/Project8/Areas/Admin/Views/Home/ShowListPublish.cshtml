@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản lý nhà xuất bản</h2>
+<h2>Publisher Management</h2>
 
 <p>
     @Html.ActionLink("Thêm nhà xuất bản", "AddPublish")
@@ -14,16 +14,16 @@
     <thead>
         <tr>
             <th>
-                Mã
+                Publisher ID
             </th>
             <th>
-                Nhà Xuất Bản
+                Publisher Name
             </th>
             <th>
-                Địa Chỉ
+                Address
             </th>
             <th>
-                Điện Thoại
+                Number Phone
             </th>
             <th></th>
         </tr>
@@ -46,10 +46,10 @@
                     @Html.DisplayFor(modelItem => item.DienThoai)
                 </td>
                 <td>
-                    @Html.ActionLink("Xem", "UpdatePublish", new { id = item.MaNXB }) |
-                    @Ajax.ActionLink("Xóa", "DeletePublish", new { id = item.MaNXB }, new AjaxOptions
+                    @Html.ActionLink("View", "UpdatePublish", new { id = item.MaNXB }) |
+                    @Ajax.ActionLink("Delete", "DeletePublish", new { id = item.MaNXB }, new AjaxOptions
                {
-                   Confirm = "Bạn có muốn xóa nhà xuất bản này không?",
+                   Confirm = "Are you sure to delete this publisher?",
                    OnComplete = "$('#row_" + @item.MaNXB + "').remove()",
                    HttpMethod = "Delete"
                })

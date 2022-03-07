@@ -5,11 +5,11 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Thêm sách</h2>
+<h2>Add Book</h2>
 <p>
-    @Html.ActionLink("Thêm tác giả", "AddAuthor") |
-    @Html.ActionLink("Thêm thể loại", "AddCategory") |
-    @Html.ActionLink("Thêm nhà xuất bản", "AddPublish")
+    @Html.ActionLink("Add New Author", "AddAuthor") |
+    @Html.ActionLink("Add New Category", "AddCategory") |
+    @Html.ActionLink("Add New Publisher", "AddPublish")
 </p>
 @using (Html.BeginForm("AddBook", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -31,25 +31,25 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Loại</label>
+            <label class="control-label col-md-2">Category</label>
             <div class="col-md-10">
-                @Html.DropDownList("MaLoai", null, "Chọn thể loại", new { @class = "form-control" })
+                @Html.DropDownList("MaLoai", null, "Choose Category", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaLoai, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Nhà xuất bản</label>
+            <label class="control-label col-md-2">Publisher</label>
             <div class="col-md-10">
-                @Html.DropDownList("MaNXB", null, "Chọn nhà xuất bản", new { @class = "form-control" })
+                @Html.DropDownList("MaNXB", null, "Choose Publisher", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaNXB, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Tác giả</label>
+            <label class="control-label col-md-2">Author</label>
             <div class="col-md-10">
-                @Html.DropDownList("MaTG", null, "Chọn tác giả", new { @class = "form-control" })
+                @Html.DropDownList("MaTG", null, "Choose Author", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaTG, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -81,7 +81,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.AnhBia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" name="fileUpload" /> Chọn ảnh bìa
+                <input type="file" name="fileUpload" /> Choose Book's Picture
                 @ViewBag.Alert
             </div>
         </div>
@@ -104,12 +104,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Thêm" class="btn btn-default" />
+                <input type="submit" value="Add" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Trở về", "ShowListBook")
+    @Html.ActionLink("Back", "ShowListBook")
 </div>

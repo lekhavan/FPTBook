@@ -11,14 +11,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenSach)
+            Book Name
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.TenSach)
         </dd>
         <dt>
-            NXB
+            Publisher
         </dt>
 
         <dd>
@@ -26,7 +26,7 @@
         </dd>
 
         <dt>
-            Tác giả
+            Author
         </dt>
 
         <dd>
@@ -34,7 +34,7 @@
         </dd>
 
         <dt>
-            Thể loại
+            Category
         </dt>
 
         <dd>
@@ -42,15 +42,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.GiaBan)
+            Price
         </dt>
 
         <dd>
-            <p><span>@(Model.GiaBan.HasValue ? Model.GiaBan.Value.ToString("N0") : "Liên hệ")</span> VND</p>
+            <p><span>@(Model.GiaBan.HasValue ? Model.GiaBan.Value.ToString("N0") : "Liên hệ")</span> $</p>
         </dd>
 
         <dt>
-            Sơ lược
+            Quickview
         </dt>
 
         <dd>
@@ -58,7 +58,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NguoiDich)
+            translator
         </dt>
 
         <dd>
@@ -66,7 +66,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AnhBia)
+            Picture
         </dt>
 
         <dd>
@@ -74,7 +74,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayCapNhat)
+            Update Date
         </dt>
 
         <dd>
@@ -82,7 +82,7 @@
         </dd>
 
         <dt>
-            Số lượng
+            Quantity
         </dt>
 
         <dd>
@@ -92,6 +92,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Trở về", "ShowListBook") |
-    @Html.ActionLink("Sửa", "UpdateBook", new { id = Model.MaSach })
+    @Html.ActionLink("Back", "ShowListBook") |
+    @Html.ActionLink("Update", "UpdateBook", new { id = Model.MaSach })
 </p>

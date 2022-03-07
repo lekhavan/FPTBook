@@ -59,7 +59,7 @@ namespace WebBanSach.Areas.Admin.Controllers
             //kiểm tra việc upload ảnh
             if (fileUpload == null)
             {
-                ViewBag.Alert = "Vui lòng chọn ảnh bìa";
+                ViewBag.Alert = "Please choose cover photo";
                 return View();
             }
             else
@@ -75,7 +75,7 @@ namespace WebBanSach.Areas.Admin.Controllers
                     //kiểm tra đường dẫn ảnh có tồn tại?
                     if (System.IO.File.Exists(path))
                     {
-                        ViewBag.Alert = "Hình ảnh đã tồn tại";
+                        ViewBag.Alert = "Image already exists";
                     }
                     else
                     {
@@ -88,13 +88,13 @@ namespace WebBanSach.Areas.Admin.Controllers
                     var result = new AdminProcess().InsertBook(sach);
                     if (result > 0)
                     {
-                        ViewBag.Success = "Thêm mới thành công";
+                        ViewBag.Success = "Successfully added";
                         //xóa trạng thái để thêm mới
                         ModelState.Clear();
                     }
                     else
                     {
-                        ModelState.AddModelError("", "thêm không thành công.");
+                        ModelState.AddModelError("", "add failed.");
                     }
                 }
             }
@@ -146,11 +146,11 @@ namespace WebBanSach.Areas.Admin.Controllers
 
                     if (result == 1)
                     {
-                        ViewBag.Success = "Cập nhật thành công";
+                        ViewBag.Success = "Update successful";
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Cập nhật không thành công.");
+                        ModelState.AddModelError("", "Update failed.");
                     }
                 }
             }
@@ -164,7 +164,7 @@ namespace WebBanSach.Areas.Admin.Controllers
 
                     if (System.IO.File.Exists(path))
                     {
-                        ViewBag.Alert = "Hình ảnh đã tồn tại";
+                        ViewBag.Alert = "Image already exists";
                     }
                     else
                     {
@@ -175,11 +175,11 @@ namespace WebBanSach.Areas.Admin.Controllers
                     var result = new AdminProcess().UpdateBook(sach);
                     if (result == 1)
                     {
-                        ViewBag.Success = "Cập nhật thành công";
+                        ViewBag.Success = "Update successful";
                     }
                     else
                     {
-                        ModelState.AddModelError("", "cập nhật không thành công.");
+                        ModelState.AddModelError("", "update failed.");
                     }
                 }
             }
@@ -239,7 +239,7 @@ namespace WebBanSach.Areas.Admin.Controllers
                 //kiểm tra hàm
                 if (result > 0)
                 {
-                    ViewBag.Success = "Thêm mới thành công";
+                    ViewBag.Success = "Successfully added";
                     //xóa trạng thái
                     ModelState.Clear();
 
@@ -247,7 +247,7 @@ namespace WebBanSach.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm không thành công.");
+                    ModelState.AddModelError("", "Add failed.");
                 }
             }
 
@@ -285,7 +285,7 @@ namespace WebBanSach.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật không thành công.");
+                    ModelState.AddModelError("", "Update failed.");
                 }
             }
 
@@ -348,13 +348,13 @@ namespace WebBanSach.Areas.Admin.Controllers
                 //kiểm tra hàm
                 if (result > 0)
                 {
-                    ViewBag.Success = "Thêm mới thành công";
+                    ViewBag.Success = "Successfully added";
                     ModelState.Clear();
                     return View();
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm không thành công.");
+                    ModelState.AddModelError("", "Add failed.");
                 }
             }
 
@@ -386,11 +386,11 @@ namespace WebBanSach.Areas.Admin.Controllers
                 //thực hiển kiểm tra
                 if (result == 1)
                 {
-                    ViewBag.Success = "Cập nhật thành công";
+                    ViewBag.Success = "Update successful";
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật không thành công.");
+                    ModelState.AddModelError("", "Update failed.");
                 }
             }
 
@@ -448,13 +448,13 @@ namespace WebBanSach.Areas.Admin.Controllers
                 //kiểm tra hàm
                 if (result > 0)
                 {
-                    ViewBag.Success = "Thêm mới thành công";
+                    ViewBag.Success = "Successfully added";
                     ModelState.Clear();
                     return View();
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm không thành công.");
+                    ModelState.AddModelError("", "Add failed.");
                 }
             }
 
@@ -486,11 +486,11 @@ namespace WebBanSach.Areas.Admin.Controllers
                 //kiểm tra hàm
                 if (result == 1)
                 {
-                    ViewBag.Success = "Cập nhật nhật thành công";
+                    ViewBag.Success = "Update successful";
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật không thành công.");
+                    ModelState.AddModelError("", "Update failed.");
                 }
             }
 
