@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebBanSach.Models.Data.DonDatHang>
+@{ ViewBag.Title = "TrackingOderDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Order detail</h2>
+
+<div class="tab">
+    <button class="tablinks">All</button>
+    <button class="tablinks" onclick="loadTable(1)">Handling</button>
+    <button class="tablinks" onclick="loadTable(2)">Packed</button>
+    <button class="tablinks" onclick="loadTable(3)">Delivering</button>
+    <button class="tablinks" onclick="loadTable(4)">Successful Delivery</button>
+</div>
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                Order ID
+            </th>
+            <th>
+                Order date
+            </th>
+            <th>
+                Delivery date
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="tbody">
+    </tbody>
+
+
+</table>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $("#myTable").DataTable({
+        "ajax": {  0
+            "url": "@Url.Action("loadOrder", "Cart")",
+            "type": "GET",
+            "datatype": "json"
+        },
+        "columns": [
+                        { "data": "MaDDH" },
+                        { "data": "NgayDat" },
+                        { "data": "NgayGiao" }
+
+                    ]
+    });
+</script>
+
