@@ -16,47 +16,47 @@
         }
 
         [Key]
-        [Display(Name = "Mã sách")]
+        [Display(Name = "Book ID")]
         public int MaSach { get; set; }
 
-        [Display(Name = "Mã loại")]
-        [Required(ErrorMessage ="Vui lòng chọn thể loại")]
+        [Display(Name = "Category ID")]
+        [Required(ErrorMessage = "Please select category")]
         public int MaLoai { get; set; }
 
-        [Display(Name = "Mã NXB")]
-        [Required(ErrorMessage ="Vui lòng chọn nhà xuất bản")]
+        [Display(Name = "Publisher ID")]
+        [Required(ErrorMessage = "Please select a publisher")]
         public int MaNXB { get; set; }
 
-        [Display(Name = "Mã tác giả")]
-        [Required(ErrorMessage = "Vui lòng chọn tác giả")]
+        [Display(Name = "Author ID")]
+        [Required(ErrorMessage = "Please select an author")]
         public int MaTG { get; set; }
 
         [StringLength(250)]
-        [Display(Name = "Tên sách")]
-        [Required(ErrorMessage = "Vui lòng nhập tên sách")]
+        [Display(Name = "Book Name")]
+        [Required(ErrorMessage = "Please enter book title")]
         public string TenSach { get; set; }
 
         [Column(TypeName = "money")]
-        [Display(Name = "Giá bán")]
+        [Display(Name = "Price")]
         public decimal? GiaBan { get; set; }
 
         [StringLength(500)]
-        [Display(Name = "Mô tả")]
+        [Display(Name = "Describe")]
         public string Mota { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Người dịch")]
+        [Display(Name = "Translator")]
         public string NguoiDich { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Ảnh bìa")]
+        [Display(Name = "Picture")]
         public string AnhBia { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        [Display(Name = "Ngày cập nhật")]
+        [Display(Name = "Update Date")]
         public DateTime? NgayCapNhat { get; set; }
 
-        [Display(Name = "Số lượng tồn")]
+        [Display(Name = "Quantity In Stock")]
         public int? SoLuongTon { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

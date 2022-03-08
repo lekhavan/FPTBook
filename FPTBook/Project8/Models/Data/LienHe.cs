@@ -13,34 +13,34 @@
         public int MaLH { get; set; }
 
         [StringLength(50)]
-        [Display(Name ="Họ")]
-        [Required(ErrorMessage ="Họ không được để trống")]
+        [Display(Name ="Family Name")]
+        [Required(ErrorMessage = "They cannot be left blank")]
         public string Ho { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Tên")]
-        [Required(ErrorMessage ="Tên không được để trống")]
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Name cannot be left blank")]
         public string Ten { get; set; }
 
         [StringLength(100)]
         [Display(Name = "Email")]
-        [Required(ErrorMessage = "Email không được để trống")]
+        [Required(ErrorMessage = "Email cannot be blank")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Điện thoại")]
-        [Required(ErrorMessage = "Không được để trống số điện thoại")]
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone number cannot be left blank")]
         [DataType(DataType.PhoneNumber)]
         public string DienThoai { get; set; }
 
         [StringLength(500)]
-        [Display(Name = "Nội dung")]
-        [Required(ErrorMessage = "Nội dung cần nhập của bạn")]
+        [Display(Name = "Content")]
+        [Required(ErrorMessage = "Your content to enter")]
         public string NoiDung { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        [Display(Name = "Ngày cập nhật")]
+        [Display(Name = "Update Date")]
         [DataType(DataType.DateTime)]
         public DateTime? NgayCapNhat { get; set; }
     }

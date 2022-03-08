@@ -6,6 +6,7 @@
     "\\Project8\\Areas\\Admin",
     "\\Project8\\Areas\\Admin\\Views",
     "\\Project8\\Areas\\Admin\\Views\\Home",
+    "\\Project8\\Controllers",
     "\\Project8\\Models",
     "\\Project8\\Models\\Process",
     "\\Project8\\Views",
@@ -13,6 +14,6 @@
     "\\Project8\\Views\\Shared",
     "\\Project8\\Views\\User"
   ],
-  "SelectedNode": "\\Project8\\Areas\\Admin\\Views\\Home\\AddAuthor.cshtml",
+  "SelectedNode": "\\Project8\\Controllers\\CartController.cs",
   "PreviewInSolutionExplorer": false
 }

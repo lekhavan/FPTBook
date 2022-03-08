@@ -672,6 +672,8 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="images\backg.jpg" />
+    <Content Include="images\backgroundweb.jpg" />
     <Content Include="images\bloc-sieu-dai.jpg" />
     <Content Include="images\co-gai-dan-mach.jpg" />
     <Content Include="images\combo-chao-con.jpg" />

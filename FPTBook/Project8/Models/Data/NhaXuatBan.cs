@@ -16,20 +16,20 @@
         }
 
         [Key]
-        [Display(Name = "Mã NXB")]
+        [Display(Name = "Publisher ID")]
         public int MaNXB { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Tên NXB")]
-        [Required(ErrorMessage ="Không được để trống")]
+        [Display(Name = "Publisher Name")]
+        [Required(ErrorMessage ="Cannot be left blank")]
         public string TenNXB { get; set; }
 
         [StringLength(250)]
-        [Display(Name = "Địa chỉ")]
+        [Display(Name = "Address")]
         public string DiaChi { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Điện thoại")]
+        [Display(Name = "Phone Number")]
         public string DienThoai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

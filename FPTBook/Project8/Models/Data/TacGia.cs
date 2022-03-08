@@ -16,28 +16,28 @@
         }
 
         [Key]
-        [Display(Name = "Mã tác giả")]
+        [Display(Name = "Author ID")]
         public int MaTG { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Tên tác giả")]
-        [Required(ErrorMessage = "Không được để trống")]
+        [Display(Name = "Author Name")]
+        [Required(ErrorMessage = "Can't be left blank")]
         public string TenTG { get; set; }
 
         [StringLength(250)]
-        [Display(Name = "Quê quán")]
+        [Display(Name = "Hometown")]
         public string QueQuan { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        [Display(Name = "Ngày sinh")]
+        [Display(Name = "Date Of Birth")]
         public DateTime? NgaySinh { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        [Display(Name = "Ngày mất")]
+        [Display(Name = "Date Of Death")]
         public DateTime? NgayMat { get; set; }
 
         [StringLength(500)]
-        [Display(Name = "Tiểu sử")]
+        [Display(Name = "Story")]
         public string TieuSu { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

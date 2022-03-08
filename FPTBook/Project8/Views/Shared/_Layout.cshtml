@@ -24,12 +24,12 @@
     @*!DataTables*@
     <link href="/Content/Client/css/footer.css" rel="stylesheet" />
 </head>
-<body style="background-color: #F0F0F0;border-bottom: none;">
+<body style="background-color: white ; border-bottom: none; ">
     <!-- Navigation -->
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8722341.js"></script>
     <!-- End of HubSpot Embed Code -->
-    <nav style="background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);border-radius: 30px 30px 30px 30px;border:none" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav style="background-color:#525151;border:none" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -44,28 +44,27 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/Home/" style="font-size:25px; color:#525151;"><i class="fa fa-home" aria-hidden="true"></i> HOME PAGE</a>
-                        
-                        
+                        <a href="/Home/" style="color:white;"><i class="fa fa-home" aria-hidden="true"></i> HOME PAGE</a>
+
+
                     </li>
 
                     <li>
-                        <a href="/Home/Contact" style="color:#525151"><i class="fa fa-phone-square" aria-hidden="true" style="color:#525151"></i> CONTACT</a>
+                        <a href="/Home/Contact" style="color:white;"><i class="fa fa-phone-square" aria-hidden="true" style="color:white;"></i> CONTACT</a>
                     </li>
                 </ul>
                 <div class="col-sm-3 col-md-3">
                     @using (Html.BeginForm("SearchResult", "Home", FormMethod.Post, new { @class = "navbar-form", @role = "search" }))
                     {
-                        <div class="input-group">
-                            @*<input style="width: 370px;" type="text" class="form-control" placeholder="Tìm kiếm sách..." name="search">*@
-                            @Html.TextBox("txtSearch", "", htmlAttributes: new { @class = "form-control", @placeholder = "Search...", @style = "width: 370px;background: #FAFAFA;border-radius: 40px;" })
-                            <span class="input-group-btn">
-                                <button style="background: #e658588c; border-radius: 40px;" class="btn btn-default" type="submit">
-                                    <span style="color:white">SEARCH</span>
-                                </button>
-                            </span>
-                        </div>
-                    }
+        <div class="input-group">
+            @*<input style="width: 370px;" type="text" class="form-control" placeholder="Tìm kiếm sách..." name="search">*@
+            @Html.TextBox("txtSearch", "", htmlAttributes: new { @class = "form-control", @placeholder = "Search...", @style = "width: 370px;background: black;border-radius: 5px;" })
+            <span class="input-group-btn">
+                <button style="background: #768e8c; border-radius: 5px;" class="btn btn-default" type="submit">
+                    <span style="color:white">SEARCH</span>
+                </button>
+            </span>
+        </div>}
                 </div>
                 @*Menu right*@
                 @Html.Action("Login", "User")
@@ -84,64 +83,60 @@
         <hr>
         <div class="container">
             <footer>
-              
-               
-
-
             </footer>
 
-        </div>  
+        </div>
         <!-- Footer -->
         <footer>
-            <div style="background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);border-radius: 39px 39px 0px 0px; " class="footer" id="footer">
+            <div style="background-color: #515252; " class="footer" id="footer">
                 <div class="container">
-                    
+
                     <div class="row">
-                        
+
                         <div class="col-lg-3  col-md-2 col-sm-4 col-xs-6">
-                            <h3 style="color:#515252;"> Help </h3>
+                            <h3 style="color: white;"> Help </h3>
                             <ul>
-                                <li> <a href="/Home/QuyDinh" style="color:#515252;font-size:1.6rem"> Usage rules </a> </li>
-                                <li> <a href="/Home/Thanhtoan" style="color:#515252;font-size:1.6rem"> Payment methods </a> </li>
-                                <li> <a href="/Home/VanChuyen" style="color:#515252;font-size:1.6rem"> Shipping method </a> </li>
+                                <li> <a href="/Home/QuyDinh" style="color:white;font-size:1.6rem"> Usage rules </a> </li>
+                                <li> <a href="/Home/Thanhtoan" style="color: white; font-size: 1.6rem"> Payment methods </a> </li>
+                                <li> <a href="/Home/VanChuyen" style="color: white; font-size: 1.6rem"> Shipping method </a> </li>
                             </ul>
                         </div>
                         <div class="col-lg-3  col-md-2 col-sm-4 col-xs-6">
-                            <h3 style="color:#515252"> Support </h3>
+                            <h3 style="color: white;"> Support </h3>
                             <ul>
-                                <li> <a href="/Home/DoiTra" style="color:#515252;font-size:1.6rem"> Return Policy </a> </li>
-                                <li> <a href="/Home/Help" style="color:#515252;font-size:1.6rem"> frequently asked Questions </a> </li>
+                                <li> <a href="/Home/DoiTra" style="color: white; font-size: 1.6rem"> Return Policy </a> </li>
+                                <li> <a href="/Home/Help" style="color: white; font-size: 1.6rem"> frequently asked Questions </a> </li>
                             </ul>
                         </div>
                         <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                            <h3 style="color:#515252"> Account </h3>
+                            <h3 style="color: white"> Account </h3>
                             <ul>
-                                <li> <a href="/User/Register" style="color:#515252;font-size:1.6rem">Sign Up</a> </li>
+                                <li> <a href="/User/Register" style="color: white; font-size: 1.6rem">Sign Up</a> </li>
                             </ul>
                         </div>
 
                         <div class="col-xs-3">
                             <div @*class="col-lg-3  col-md-3 col-sm-6 col-xs-12 "*@>
-                                <h3 style="color:#515252"> Follow Us </h3>
+                                <h3 style="color: white"> Follow Us </h3>
                                 @*<ul>
-                                    <li>
-                                        <div class="input-append newsletter-box text-center">
-                                            <input type="text" class="form-control" placeholder="Email..." />
-                                            <button class="btn-warning btn-block btn-md" type="button"> ĐĂNG KÝ <i class="fa fa-long-arrow-right"> </i> </button>
-                                        </div>
-                                    </li>
-                                </ul*@
+                                        <li>
+                                            <div class="input-append newsletter-box text-center">
+                                                <input type="text" class="form-control" placeholder="Email..." />
+                                                <button class="btn-warning btn-block btn-md" type="button"> ĐĂNG KÝ <i class="fa fa-long-arrow-right"> </i> </button>
+                                            </div>
+                                        </li>
+                                    </ul*@
                                 @*<ul class="social">
-                                    <li> <a href="https://goo.gl/fpbZzR"> <i class="fa fa-facebook-official" aria-hidden="true"></i> </a> </li>
-                                    <li> <a href="https://goo.gl/mfjtLE"> <i class="fa fa-youtube-play" aria-hidden="true"></i> </a> </li>
-                                </ul>*@
+                                        <li> <a href="https://goo.gl/fpbZzR"> <i class="fa fa-facebook-official" aria-hidden="true"></i> </a> </li>
+                                        <li> <a href="https://goo.gl/mfjtLE"> <i class="fa fa-youtube-play" aria-hidden="true"></i> </a> </li>
+                                    </ul>*@
                             </div>
                             <ul class="footer-social ">
                                 <li>
-                                    <a rel="nofollow" href="https://www.youtube.com/watch?v=t8RGPwMiF88" title="Youtube" target="_blank" style="color:#515252;font-size:1.6rem"><i class="fa fa-youtube-play"></i> Youtube</a>
+                                    <a rel="nofollow" href="https://www.youtube.com/watch?v=t8RGPwMiF88" title="Youtube" target="_blank" style="color: white; font-size: 1.6rem"><i class="fa fa-youtube-play"></i> Youtube</a>
                                 </li>
                                 <li>
-                                    <a rel="nofollow" href="https://www.facebook.com/GreenwichVietnam" title="Facebook" target="_blank" style="color:#515252;font-size:1.6rem"><i class="fa fa-facebook-square"></i> Facebook</a>
+                                    <a rel="nofollow" href="https://www.facebook.com/GreenwichVietnam" title="Facebook" target="_blank" style="color: white; font-size: 1.6rem"><i class="fa fa-facebook-square"></i> Facebook</a>
                                 </li>
 
                             </ul>
@@ -156,9 +151,9 @@
                                 <!-- <a href="https://mixpanel.com/f/partner" class=""><img style="padding-top: 5px;" src="/assets/img/badge_light.png" alt="Mobile Analytics"></a> -->
                             </div>
                         </div>
-                    </div>                  
+                    </div>
                     <div class="container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; position: relative;">
-                        <div style="color: white; position:absolute;color:#515252;font-size:1.6rem">
+                        <div style="color: white; position: absolute; color: white; font-size: 1.6rem">
                             <p>&copy; @DateTime.Now.Year - FPTBook Store is developed by team 1 GCC0802 K8 University of Greenwich Vietnam- Can Tho campus</p>
                         </div>
                     </div>
@@ -169,7 +164,7 @@
             <!--/.footer-->
             @*<div style="background-color: #087BB0" class="footer-bottom">
 
-            </div>*@
+                </div>*@
             <!--/.footer-bottom-->
         </footer>
     </div>

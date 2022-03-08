@@ -17,13 +17,13 @@
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Display(Name = "Mã đơn hàng")]
+        [Display(Name = "Order ID")]
         public int MaDDH { get; set; }
 
-        [Display(Name = "Số lượng")]
+        [Display(Name = "Quantity")]
         public int? SoLuong { get; set; }
 
-        [Display(Name = "Đơn giá")]
+        [Display(Name = "Total Price")]
         public decimal? DonGia { get; set; }
 
         public virtual DonDatHang DonDatHang { get; set; }

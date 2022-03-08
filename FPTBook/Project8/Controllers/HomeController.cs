@@ -76,7 +76,7 @@ namespace WebBanSach.Controllers
         [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "We are very pleased to hear from you!";
+            ViewBag.Message = "We are happy to answer your questions!";
 
             return View();
         }
