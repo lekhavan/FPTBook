@@ -403,7 +403,7 @@ namespace WebBanSach.Models.Process
         {
             try
             {
-                var sach = db.Saches.SingleOrDefault(x => x.MaSach == id);
+                var sach = db.Saches.Single(x => x.MaSach == id);
                 db.Saches.Remove(sach);
                 db.SaveChanges();
                 return true;

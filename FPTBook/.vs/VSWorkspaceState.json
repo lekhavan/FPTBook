@@ -14,6 +14,6 @@
     "\\Project8\\Views\\Shared",
     "\\Project8\\Views\\User"
   ],
-  "SelectedNode": "\\Project8\\Controllers\\CartController.cs",
+  "SelectedNode": "\\Project8\\Areas\\Admin\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
