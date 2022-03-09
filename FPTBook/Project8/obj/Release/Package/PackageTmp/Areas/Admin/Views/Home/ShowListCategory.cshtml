@@ -5,16 +5,16 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản lý thể loại</h2>
+<h2>Category Management</h2>
 
 <p>
-    @Html.ActionLink("Thêm thể loại", "AddCategory")
+    @Html.ActionLink("Add Category", "AddCategory")
 </p>
 <table class="table" id="myTable">
     <thead>
         <tr>
-            <th>Mã loại</th>
-            <th>Tên Loại</th>
+            <th>Category ID</th>
+            <th>Category Name</th>
             <th></th>
         </tr>
     </thead>
@@ -29,10 +29,10 @@
                     @Html.DisplayFor(modelItem => item.TenLoai)
                 </td>
                 <td>
-                    @Html.ActionLink("Xem", "UpdateCategory", new { id = item.MaLoai }) |
-                    @Ajax.ActionLink("Xóa", "DeleteCategory", new { id = item.MaLoai }, new AjaxOptions
+                    @Html.ActionLink("View", "UpdateCategory", new { id = item.MaLoai }) |
+                    @Ajax.ActionLink("Delete", "DeleteCategory", new { id = item.MaLoai }, new AjaxOptions
                {
-                   Confirm = "Bạn có muốn xóa thể loại này không?",
+                   Confirm = "Are you sure to delete this category?",
                    OnComplete = "$('#row_" + @item.MaLoai + "').remove()",
                    HttpMethod = "Delete"
                })

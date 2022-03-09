@@ -5,19 +5,19 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản lý tác giả</h2>
+<h2>Author Management</h2>
 
 <p>
-    @Html.ActionLink("Thêm tác giả", "AddAuthor")
+    @Html.ActionLink("Add New Author", "AddAuthor")
 </p>
 <table class="table" id="myTable">
     <thead>
         <tr>
             <th>
-                Mã
+                Author ID
             </th>
             <th>
-                Tác Giả
+                Author Name
             </th>
             <th></th>
         </tr>
@@ -33,10 +33,10 @@
                     @Html.DisplayFor(modelItem => item.TenTG)
                 </td>
                 <td>
-                    @Html.ActionLink("Xem", "UpdateAuthor", new { id = item.MaTG }) |
-                    @Ajax.ActionLink("Xóa", "DeleteAuthor", new { id = item.MaTG }, new AjaxOptions
+                    @Html.ActionLink("View", "UpdateAuthor", new { id = item.MaTG }) |
+                    @Ajax.ActionLink("Delete", "DeleteAuthor", new { id = item.MaTG }, new AjaxOptions
                {
-                   Confirm = "Bạn có muốn xóa tác giả này không?",
+                   Confirm = "Are you sure to delete this author?",
                    OnComplete = "$('#row_" + @item.MaTG + "').remove()",
                    HttpMethod = "Delete"
                })

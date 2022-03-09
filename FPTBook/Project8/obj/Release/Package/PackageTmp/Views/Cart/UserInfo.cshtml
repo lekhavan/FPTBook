@@ -32,11 +32,11 @@
         @using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
             {
             <div class="form-group">
-                <h4>Thông tin khách hàng</h4>
+                <h4>Customer Information</h4>
                 <input name="MaKH" class="form-control" value="@Model.MaKH" type="hidden" />
             </div>
             <div class="form-group">
-                <label>Họ tên khách hàng</label>
+                <label>Customer name</label>
                 <input name="TenKH" class="form-control" value="@Model.TenKH" readonly="readonly" />              
             </div>
                 <div class="form-group">
@@ -44,11 +44,11 @@
                     <input name="Email" type="email" class="form-control" value="@Model.Email" readonly="readonly" />  
                 </div>
                 <div class="form-group">
-                    <label>Địa chỉ</label>
+                    <label>Address</label>
                     <input name="DiaChi" class="form-control" value="@Model.DiaChi" readonly="readonly" />
                 </div>
                 <div class="form-group">
-                    <label>Điện thoại</label>
+                    <label>Phone Number</label>
                     <input name="DienThoai" class="form-control" value="@Model.DienThoai" readonly="readonly" />
                 </div>
                 <div class="checkout-button">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="content" style="display: flex;align-items: center;">
                         <span class="checkout-title">
-                            Thanh Toán Khi Nhận Hàng
+                            Payment on delivery
                         </span>
                     </div>
                 </div>
@@ -68,12 +68,12 @@
                     </div>
                     <div class="content" style="display: flex;align-items: center;">
                         <span class="checkout-title">
-                            Thanh toán bằng MoMo
+                            Pay with MoMo
                         </span>
                     </div>
                 </div>
                 <br/>
-                <button type="submit" class="btn btn-success">Gửi đơn hàng</button>
+                <button type="submit" class="btn btn-success">Submit an order</button>
         }
     </div>
 

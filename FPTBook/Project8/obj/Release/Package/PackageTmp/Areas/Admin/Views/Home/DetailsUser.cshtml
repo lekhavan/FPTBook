@@ -5,13 +5,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi tiết người dùng</h2>
+<h2>User Information Details</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenKH)
+            Customer Name
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
+            Address
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DienThoai)
+            Phone Number
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgaySinh)
+            Date Of Birth
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TaiKhoan)
+            Account
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MatKhau)
+            Password
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayTao)
+            Create Date
         </dt>
 
         <dd>
@@ -75,16 +75,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TrangThai)
+            Status
         </dt>
 
         <dd>
-            <a href="#">@(Model.TrangThai ? "Kích hoạt" : "Khóa")</a>
+            <a href="#">@(Model.TrangThai ? "Activated" : "Block")</a>
         </dd>
 
     </dl>
 </div>
 <p>  
-    @Html.ActionLink("Trở về", "ShowUser")
+    @Html.ActionLink("Back", "ShowUser")
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.MaKH })*@
 </p>

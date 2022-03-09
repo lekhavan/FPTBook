@@ -15,13 +15,12 @@
             ChiTietDDHs = new HashSet<ChiTietDDH>();
         }
 
-        
         [Key]
         [Display(Name = "Order ID")]
         public int MaDDH { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        [Display(Name ="Order Date")]
+        [Display(Name = "Order Date")]
         public DateTime NgayDat { get; set; }
 
         [Column(TypeName = "smalldatetime")]
@@ -32,12 +31,14 @@
         public bool TinhTrang { get; set; }
 
         public int MaKH { get; set; }
+
         //public int? ThanhToan { get; set; }
-       // public int? Tracking { get; set; }
-        
+        // public int? Tracking { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDDH> ChiTietDDHs { get; set; }
 
         public virtual KhachHang KhachHang { get; set; }
+
     }
 }

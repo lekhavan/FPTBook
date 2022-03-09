@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<WebBanSach.Models.Data.DonDatHang>
 
-@{
-    ViewBag.Title = "Order";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
+@{ ViewBag.Title = "Order";
+                Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
 
-<h2>Quản lý đơn hàng</h2>
+<h2>Order Management</h2>
 
 <table class="table" id="myTable">
     <thead>
@@ -26,34 +24,43 @@
                 @Html.DisplayNameFor(model => model.TinhTrang)
             </th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var item in Model)
         {
-            <tr id="row_@item.MaDDH">
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaDDH)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KhachHang.TenKH)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayDat)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayGiao)
-                </td>
-                <td>
-                    <a href="#">@(item.TinhTrang ? "Chưa giao" : "Đã giao")</a>
-                </td>
-                <td>
-                    @Html.ActionLink("Xem", "DetailsOrder", new { id = item.MaDDH })
-                </td>
-            </tr>
-        }
+<tr id="row_@item.MaDDH">
+    <td>
+        @Html.DisplayFor(modelItem => item.MaDDH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KhachHang.TenKH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayDat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayGiao)
+    </td>
+    <td>
+        <a href="#">@(item.TinhTrang ? "Not delivery" : "Deliveried")</a>
+    </td>
+    <td>
+        @Html.DropDownList("Tracking", new List<SelectListItem>
+{
+                        new SelectListItem() {Text = "handling", Value="0"},
+                        new SelectListItem() {Text = "Packing", Value="1"},
+                        new SelectListItem() {Text = "Deliveried", Value="2"},
+                        new SelectListItem() {Text = "Successfully", Value="3"}
+    })
+    </td>
+    <td>
+        @Html.ActionLink("View", "DetailsOrder", new { id = item.MaDDH })
+    </td>
+</tr>}
     </tbody>
-    
+
 
 </table>

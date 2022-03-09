@@ -4,14 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Xác Nhận Đăng Ký Thành Viên</h2>
+<h2>Member Registration Confirmation</h2>
 <div class="alert alert-warning" id="previous">
-    <strong>Xác Nhận Tài Khoản</strong>
+    <strong>Verify account</strong>
     <input type="submit" class="btn btn-warning" value="Kích Hoạt" onclick="XacNhan()"/>
 </div>
 <div class="alert alert-success" id="after" style="display: none;">
-    <strong><span class="glyphicon glyphicon-ok"></span> Tài Khoản Đã Kích Hoạt Thành Công , Vui Lòng Đăng Nhập Lại Để Mua Hàng !</strong>
-    <p style="text-align: center; color: red;">Bạn Sẽ Được Chuyển Về Trang Mua Hàng Trong <span id="countdown"></span></p>
+    <strong><span class="glyphicon glyphicon-ok"></span> Account Activated Successfully, Please Log In Again To Purchase!</strong>
+    <p style="text-align: center; color: red;">You will be redirected to the Purchase page in <span id="countdown"></span></p>
 </div>
 
 <script>

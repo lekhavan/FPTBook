@@ -19,7 +19,7 @@ namespace WebBanSach.Controllers
     {
         //khởi tạo dữ liệu
         BSDBContext db = new BSDBContext();
-
+        public static ChiTietDDH ct;
         //tạo 1 chuỗi hằng để gán session
         private const string CartSession = "CartSession";
 
@@ -348,6 +348,7 @@ namespace WebBanSach.Controllers
         }
         public ActionResult TrackingOderDetails()
         {
+            
             return View();
         }
 

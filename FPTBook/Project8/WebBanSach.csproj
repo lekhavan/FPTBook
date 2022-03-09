@@ -672,6 +672,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="images\00TRUMPBOOKS-COMBO-mobileMasterAt3x.jpg" />
     <Content Include="images\Cambridge-IELTS-books-1-14.png" />
     <Content Include="images\DNT.jpg" />
     <Content Include="images\good-to-great-front-2.jpg" />
@@ -680,6 +681,7 @@
     <Content Include="images\Leader.jpg" />
     <Content Include="images\logo.jpg" />
     <Content Include="images\magic.jpg" />
+    <Content Include="images\power-vs-force.jpg" />
     <Content Include="images\richdad.jpg" />
     <Content Include="images\robert.png" />
     <Content Include="images\Secret.jpg" />
@@ -1089,7 +1091,6 @@
     <Content Include="Areas\Admin\Views\Home\Order.cshtml" />
     <Content Include="Areas\Admin\Views\Home\DetailsOrder.cshtml" />
     <Content Include="EmailTemplate\Text.cshtml" />
-    <None Include="Properties\PublishProfiles\123.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1150,6 +1151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

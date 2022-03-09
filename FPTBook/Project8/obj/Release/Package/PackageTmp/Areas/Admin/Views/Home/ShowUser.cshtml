@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Danh sách người dùng</h2>
+<h2>Customers List</h2>
 
 <table class="table" id="myTable">
     <thead>
@@ -40,13 +40,13 @@
                     @Html.DisplayFor(modelItem => item.NgayTao)
                 </td>
                 <td>
-                    <a href="#" class="btn-active" data-id="@item.MaKH">@Html.Raw(item.TrangThai ? "<strong>Kích hoạt</strong>" : "Khoá")</a>
+                    <a href="#" class="btn-active" data-id="@item.MaKH">@Html.Raw(item.TrangThai ? "<strong>Activated</strong>" : "Block")</a>
                 </td>
                 <td>
-                    @Html.ActionLink("Xem", "DetailsUser", new { id = item.MaKH }) |
-                    @Ajax.ActionLink("Xóa", "DeleteUser", new { id = item.MaKH }, new AjaxOptions
+                    @Html.ActionLink("View", "DetailsUser", new { id = item.MaKH }) |
+                    @Ajax.ActionLink("Delete", "DeleteUser", new { id = item.MaKH }, new AjaxOptions
                {
-                   Confirm = "Bạn có muốn xóa người dùng này không?",
+                   Confirm = "Are you sure to delete this customer?",
                    OnComplete = "$('#row_" + @item.MaKH + "').remove()",
                    HttpMethod = "Delete"
                })

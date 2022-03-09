@@ -14,6 +14,7 @@ namespace WebBanSach.Controllers
     {
         BSDBContext db = new BSDBContext();
         // GET: Book
+        
         public ActionResult Index()
         {
             return View();

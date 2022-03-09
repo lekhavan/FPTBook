@@ -11,12 +11,12 @@
         @if (session != null)
         {
             <li>
-                <a href="/Admin/Login/AdminInfo"><i class="fa fa-user fa-fw"></i> Hồ sơ</a>
+                <a href="/Admin/Login/AdminInfo"><i class="fa fa-user fa-fw"></i> Information</a>
             </li>
         }
         <li class="divider"></li>
         <li>
-            @Html.ActionLink(" Đăng xuất", "Logout", "Login", new { @class = "fa fa-sign-out fa-fw" })
+            @Html.ActionLink("Logout", "Logout", "Login", new { @class = "fa fa-sign-out fa-fw" })
         </li>
     </ul>
     <!-- /.dropdown-user -->

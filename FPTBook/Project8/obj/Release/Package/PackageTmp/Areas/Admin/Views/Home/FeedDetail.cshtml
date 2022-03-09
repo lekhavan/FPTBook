@@ -5,13 +5,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi tiết phản hồi</h2>
+<h2>Feedback Details</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Ho)
+            Family Name
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ten)
+            Last Name
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DienThoai)
+            Phone Number
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NoiDung)
+            Content
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayCapNhat)
+            Update Date
         </dt>
 
         <dd>
@@ -61,5 +61,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Trở về", "FeedBack")
+    @Html.ActionLink("Back", "FeedBack")
 </p>

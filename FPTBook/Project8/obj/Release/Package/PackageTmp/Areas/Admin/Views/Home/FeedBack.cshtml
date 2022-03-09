@@ -5,25 +5,25 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Phản hồi từ khách hàng</h2>
+<h2>Feedback</h2>
 
 <table class="table" id="myTable">
     <thead>
         <tr>
             <th>
-                Họ
+                Family Name
             </th>
             <th>
-                Tên
+                Last Name
             </th>
             <th>
                 Email
             </th>
             <th>
-                Điện thoại
+                Phone Number
             </th>
             <th>
-                Ngày cập nhật
+                Update Date
             </th>
             <th></th>
         </tr>
@@ -49,10 +49,10 @@
                     @String.Format("{0:dd/MM/yyyy}", item.NgayCapNhat)
                 </td>
                 <td>
-                    @Html.ActionLink("Xem", "FeedDetail", new { id = item.MaLH }) |
-                    @Ajax.ActionLink("Xóa", "DeleteFeedBack", new { id = item.MaLH }, new AjaxOptions
+                    @Html.ActionLink("View", "FeedDetail", new { id = item.MaLH }) |
+                    @Ajax.ActionLink("Delete", "DeleteFeedBack", new { id = item.MaLH }, new AjaxOptions
                {
-                   Confirm = "Bạn có muốn xóa phản hồi này không?",
+                   Confirm = "Are you sure to delete this feedback?",
                    OnComplete = "$('#row_" + @item.MaLH + "').remove()",
                    HttpMethod = "Delete"
                })

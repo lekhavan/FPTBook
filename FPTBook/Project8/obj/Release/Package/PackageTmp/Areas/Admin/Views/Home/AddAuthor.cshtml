@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Thêm tác giả</h2>
+<h2>Add Author</h2>
 
 @using (Html.BeginForm("AddAuthor", "Home", FormMethod.Post))
 {
@@ -60,12 +60,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Thêm" class="btn btn-default" />
+                <input type="submit" value="Add" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Trở về", "ShowListAuthor")
+    @Html.ActionLink("Back", "ShowListAuthor")
 </div>

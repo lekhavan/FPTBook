@@ -8,11 +8,11 @@
 
 <div class="row">
     <div class="col-md-3">
-        <p class="lead">DANH MỤC SẢN PHẨM</p>
+        <p class="lead">List Books</p>
         @Html.Action("ShowCategory", "Home")
     </div>
     <div class="col-md-9">
-        <h3>Tất cả sách</h3>
+        <h3>All Books</h3>
         <hr />
         <div class="row">
             @foreach (var item in Model)
@@ -26,14 +26,14 @@
                             <h4>
                                 <a title="@item.TenSach" href="/Book/Details/@item.MaSach" style="color:green;">@(item.TenSach.Length > 26 ? item.TenSach.Substring(0, 22) + "..." : item.TenSach)</a>
                             </h4>
-                            <a class="btn btn-warning" href="/Cart/AddItem/?id=@item.MaSach&quantity=1">Mua hàng</a>
+                            <a class="btn btn-warning" href="/Cart/AddItem/?id=@item.MaSach&quantity=1">Purchase</a>
                             @if (item.GiaBan > 0)
                             {
-                                <h4 class="pull-right" style="color:red;">@item.GiaBan.Value.ToString("N0") VND</h4>
+                                <h4 class="pull-right" style="color:red;">@item.GiaBan.Value.ToString("N0") $</h4>
                             }
                             else
                             {
-                                <h4 class="pull-right" style="color:red;">Liên hệ</h4>
+                                <h4 class="pull-right" style="color:red;">Contact</h4>
                             }
                         </div>
                     </div>
@@ -41,7 +41,7 @@
             }
         </div>
         @*tạo link liên kết trang*@
-        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
 
         @Html.PagedListPager(Model, page => Url.Action("ShowAllBook", new { page = page }))
     </div>
