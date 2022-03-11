@@ -12,13 +12,12 @@
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int MaSach { get; set; }
+        public int OdID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Display(Name = "Book ID")]
+        public int? MaSach { get; set; }
         [Display(Name = "Order ID")]
-        public int MaDDH { get; set; }
+        public int? MaDDH { get; set; }
 
         [Display(Name = "Quantity")]
         public int? SoLuong { get; set; }

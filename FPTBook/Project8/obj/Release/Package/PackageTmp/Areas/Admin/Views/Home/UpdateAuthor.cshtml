@@ -36,29 +36,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">Date Of Birth</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NgaySinh, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Date Of Death</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NgayMat, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.NgayMat, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Story</label>
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.TieuSu, new { @class = "form-control", @rows = "7" })
-                @Html.ValidationMessageFor(model => model.TieuSu, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

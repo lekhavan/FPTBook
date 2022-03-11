@@ -346,27 +346,20 @@ namespace WebBanSach.Controllers
             List<DonDatHang> donDatHang = db.DonDatHangs.Where(p => p.MaKH == UserController.khachhangstatic.MaKH).ToList();
             return View(donDatHang);
         }
-        public ActionResult TrackingOderDetails()
+        public ActionResult TrackingOderDetails( int id)
         {
-            
-            return View();
+            ChiTietDDH orderdetail = db.ChiTietDDHs.Find(id);          
+            return View(orderdetail);
         }
 
         public JsonResult loadOrder()
         {
-            //if (id!=null)
-            //{
             db.Configuration.ProxyCreationEnabled = false;
             var donDatHang = db.DonDatHangs.ToList();
             
             return Json(new {data= donDatHang }
                 , JsonRequestBehavior.AllowGet);
-            //}
-            //else
-            //{
-            //    List<DonDatHang> donDatHang = db.DonDatHangs.Where(p => p.MaKH == UserController.khachhangstatic.MaKH).ToList();
-            //    return Json(donDatHang, JsonRequestBehavior.AllowGet);
-            //}
+          
         }
     }
 }

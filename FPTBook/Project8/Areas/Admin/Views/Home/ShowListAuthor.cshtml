@@ -25,23 +25,23 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr id="row_@item.MaTG">
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaTG)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenTG)
-                </td>
-                <td>
-                    @Html.ActionLink("View", "UpdateAuthor", new { id = item.MaTG }) |
-                    @Ajax.ActionLink("Delete", "DeleteAuthor", new { id = item.MaTG }, new AjaxOptions
-               {
-                   Confirm = "Are you sure to delete this author?",
-                   OnComplete = "$('#row_" + @item.MaTG + "').remove()",
-                   HttpMethod = "Delete"
-               })
-                </td>
-            </tr>
+        <tr id="row_@item.MaTG">
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTG)
+            </td>
+            <td>
+             @Html.ActionLink("View", "UpdateAuthor", new { id = item.MaTG }) |
+             @Ajax.ActionLink("Delete", "DeleteAuthor", new { id = item.MaTG }, new AjaxOptions
+        {
+            Confirm = "Are you sure to delete this author?",
+            OnComplete = "$('#row_" + @item.MaTG + "').remove()",
+            HttpMethod = "Delete"
+        })
+         </td>
+        </tr>
         }
     </tbody>
 
