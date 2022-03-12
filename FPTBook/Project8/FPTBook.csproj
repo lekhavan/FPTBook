@@ -1132,20 +1132,19 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Book\DidYouSee.cshtml" />
     <Content Include="Views\Book\ShowAllBook.cshtml" />
-    <Content Include="Views\Home\QuyDinh.cshtml" />
+    <Content Include="Views\Home\Rule.cshtml" />
     <Content Include="Views\User\EditUser.cshtml" />
     <Content Include="Views\Home\SearchResult.cshtml" />
     <Content Include="Views\Cart\CartHeader.cshtml" />
     <Content Include="Views\Cart\Payment.cshtml" />
     <Content Include="Views\Cart\UserInfo.cshtml" />
     <Content Include="Views\Cart\Success.cshtml" />
-    <Content Include="Views\Home\Thanhtoan.cshtml" />
-    <Content Include="Views\Home\VanChuyen.cshtml" />
-    <Content Include="Views\Home\DoiTra.cshtml" />
+    <Content Include="Views\Home\Paymentmethod.cshtml" />
+    <Content Include="Views\Home\Delivery.cshtml" />
+    <Content Include="Views\Home\Return.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
-    <Content Include="Views\User\XacNhan.cshtml" />
-    <Content Include="Views\User\ThongBaoKichHoat.cshtml" />
-    <Content Include="Views\User\KiemTraThongBaoKichHoat.cshtml" />
+    <Content Include="Views\User\ActivationNotice.cshtml" />
+    <Content Include="Views\User\CheckActivationNotification.cshtml" />
     <Content Include="Views\Cart\TrackingOder.cshtml" />
     <Content Include="Views\Cart\TrackingOderDetails.cshtml" />
   </ItemGroup>

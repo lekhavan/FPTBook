@@ -8,7 +8,6 @@ namespace WebBanSach.Models.Process
 {
     public class AdminProcess
     {
-        //Tầng xử lý dữ liệu
 
         BSDBContext db = null;
 
@@ -18,12 +17,6 @@ namespace WebBanSach.Models.Process
             db = new BSDBContext();
         }
 
-        /// <summary>
-        /// Hàm đăng nhập
-        /// </summary>
-        /// <param name="username">string</param>
-        /// <param name="password">string</param>
-        /// <returns>int</returns>
         public int Login(string username, string password)
         {
             var result = db.Admins.SingleOrDefault(x => x.TaiKhoan == username);
@@ -45,85 +38,51 @@ namespace WebBanSach.Models.Process
             }
         }
 
-        //Get ID : lấy mã
 
         #region lấy mã
 
-        /// <summary>
-        /// hàm lấy mã admin
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>Admin</returns>
+     
         public Admin GetIdAdmin(int id)
         {
             return db.Admins.Find(id);
         }
 
-        /// <summary>
-        /// hàm lấy mã sách
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>Sach</returns>
+      
         public Sach GetIdBook(int id)
         {
             return db.Saches.Find(id);
         }
 
-        /// <summary>
-        /// hàm lấy mã thể loại
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>TheLoai</returns>
+       
         public TheLoai GetIdCategory(int id)
         {
             return db.TheLoais.Find(id);
         }
 
-        /// <summary>
-        /// hàm lấy mã tác giả
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>TacGia</returns>
+        
         public TacGia GetIdAuthor(int id)
         {
             return db.TacGias.Find(id);
         }
 
-        /// <summary>
-        /// hàm lấy mã nhà xuất bản
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>NhaXuatBan</returns>
+        
         public NhaXuatBan GetIdPublish(int id)
         {
             return db.NhaXuatBans.Find(id);
         }
 
-        /// <summary>
-        /// Hàm lấy mã khách hàng tham quan
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>KhachHang</returns>
+       
         public KhachHang GetIdCustomer(int id)
         {
             return db.KhachHangs.Find(id);
         }
 
-        /// <summary>
-        /// hàm lấy mã đơn đặt hàng
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>DonDatHang</returns>
         public DonDatHang GetIdOrder(int id)
         {
             return db.DonDatHangs.Find(id);
         }
 
-        /// <summary>
-        /// hàm lấy mã liên hệ
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>LienHe</returns>
+       
         public LienHe GetIdContact(int id)
         {
             return db.LienHes.Find(id);
@@ -131,24 +90,17 @@ namespace WebBanSach.Models.Process
 
         #endregion
 
-        //Category : thể loại
+
 
         #region thể loại
 
-        /// <summary>
-        /// hàm xuất danh sách thể loại
-        /// </summary>
-        /// <returns>List</returns>
+   
         public List<TheLoai> ListAllCategory()
         {
             return db.TheLoais.OrderBy(x => x.MaLoai).ToList();
         }
 
-        /// <summary>
-        /// hàm thêm thểm loại
-        /// </summary>
-        /// <param name="entity">TheLoai</param>
-        /// <returns>int</returns>
+   
         public int InsertCategory(TheLoai entity)
         {
             db.TheLoais.Add(entity);
@@ -156,11 +108,6 @@ namespace WebBanSach.Models.Process
             return entity.MaLoai;
         }
 
-        /// <summary>
-        /// hàm cập nhật thể loại
-        /// </summary>
-        /// <param name="entity">TheLoai</param>
-        /// <returns>int</returns>
         public int UpdateCategory(TheLoai entity)
         {
             try
@@ -176,11 +123,6 @@ namespace WebBanSach.Models.Process
             }
         }
 
-        /// <summary>
-        /// hàm xóa thể loại
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>bool</returns>
         public bool DeleteCategory(int id)
         {
             try
@@ -198,24 +140,16 @@ namespace WebBanSach.Models.Process
 
         #endregion
 
-        //Author : tác giả
+
 
         #region tác giả
 
-        /// <summary>
-        /// hàm xuất danh sách tác giả
-        /// </summary>
-        /// <returns>List</returns>
+
         public List<TacGia> ListAllAuthor()
         {
             return db.TacGias.OrderBy(x => x.MaTG).ToList();
         }
 
-        /// <summary>
-        /// hàm thêm tác giả
-        /// </summary>
-        /// <param name="entity">TacGia</param>
-        /// <returns></returns>
         public int InsertAuthor(TacGia entity)
         {
             db.TacGias.Add(entity);
@@ -223,11 +157,7 @@ namespace WebBanSach.Models.Process
             return entity.MaTG;
         }
 
-        /// <summary>
-        /// hàm cập nhật tác giả
-        /// </summary>
-        /// <param name="entity">TacGia</param>
-        /// <returns>int</returns>
+
         public int UpdateAuthor(TacGia entity)
         {
             try
@@ -247,11 +177,6 @@ namespace WebBanSach.Models.Process
             }
         }
 
-        /// <summary>
-        /// hàm xóa tác giả
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>int</returns>
         public bool DeleteAuthor(int id)
         {
             try
@@ -270,24 +195,17 @@ namespace WebBanSach.Models.Process
         #endregion
 
 
-        //Publish : nhà xuất bản
+
 
         #region nhà xuất bản
 
-        /// <summary>
-        /// hàm xuất danh sách nhà xuất bản
-        /// </summary>
-        /// <returns>List</returns>
+
         public List<NhaXuatBan> ListAllPublish()
         {
             return db.NhaXuatBans.OrderBy(x => x.MaNXB).ToList();
         }
 
-        /// <summary>
-        /// hàm thêm nhà xuất bản
-        /// </summary>
-        /// <param name="entity">NhaXuatBan</param>
-        /// <returns>int</returns>
+
         public int InsertPublish(NhaXuatBan entity)
         {
             db.NhaXuatBans.Add(entity);
@@ -295,11 +213,6 @@ namespace WebBanSach.Models.Process
             return entity.MaNXB;
         }
 
-        /// <summary>
-        /// hàm cập nhật nhà xuất bản
-        /// </summary>
-        /// <param name="entity">NhaXuatBan</param>
-        /// <returns>int</returns>
         public int UpdatePublish(NhaXuatBan entity)
         {
             try
@@ -317,11 +230,7 @@ namespace WebBanSach.Models.Process
             }
         }
 
-        /// <summary>
-        /// hàm xóa nhà xuất bản
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>bool</returns>
+
         public bool DeletePublish(int id)
         {
             try
@@ -340,24 +249,17 @@ namespace WebBanSach.Models.Process
         #endregion
 
 
-        //Books : sách
+
 
         #region sách
 
-        /// <summary>
-        /// hàm xuất danh sách Sách
-        /// </summary>
-        /// <returns>List</returns>
+
         public List<Sach> ListAllBook()
         {
             return db.Saches.OrderBy(x => x.MaSach).ToList();
         }
 
-        /// <summary>
-        /// hàm thêm sách
-        /// </summary>
-        /// <param name="entity">Sach</param>
-        /// <returns>int</returns>
+ 
         public int InsertBook(Sach entity)
         {
             db.Saches.Add(entity);
@@ -365,11 +267,6 @@ namespace WebBanSach.Models.Process
             return entity.MaSach;
         }
 
-        /// <summary>
-        /// hàm cập nhật sách
-        /// </summary>
-        /// <param name="entity">Sách</param>
-        /// <returns>int</returns>
         public int UpdateBook(Sach entity)
         {
             try
@@ -394,11 +291,7 @@ namespace WebBanSach.Models.Process
             }
         }
 
-        /// <summary>
-        /// hàm xóa 1 cuốn sách
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>bool</returns>
+
         public bool DeleteBook(int id)
         {
             try
@@ -416,24 +309,17 @@ namespace WebBanSach.Models.Process
 
         #endregion
 
-        //Liên hệ từ khách hàng
+
 
         #region phản hồi khách hàng
 
-        /// <summary>
-        /// hàm lấy danh sách những phản hồi từ khách hàng
-        /// </summary>
-        /// <returns>List</returns>
+
         public List<LienHe> ShowListContact()
         {
             return db.LienHes.OrderBy(x => x.MaLH).ToList();
         }
 
-        /// <summary>
-        /// hàm xóa thông tin phản hồi khách hàng
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>bool</returns>
+
         public bool deleteContact(int id)
         {
             try
@@ -451,22 +337,15 @@ namespace WebBanSach.Models.Process
 
         #endregion
 
-        //Quản lý người dùng
+  
 
-        /// <summary>
-        /// hàm xuất danh sách người dùng
-        /// </summary>
-        /// <returns>List</returns>
+
         public List<KhachHang> ListUser()
         {
             return db.KhachHangs.OrderBy(x => x.MaKH).ToList();
         }
 
-        /// <summary>
-        /// hàm xóa người dùng
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>bool</returns>
+ 
         public bool DeleteUser(int id)
         {
             try

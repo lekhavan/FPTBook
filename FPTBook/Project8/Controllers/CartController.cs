@@ -17,13 +17,13 @@ namespace WebBanSach.Controllers
 {
     public class CartController : Controller
     {
-        //khởi tạo dữ liệu
+
         BSDBContext db = new BSDBContext();
         public static ChiTietDDH ct;
-        //tạo 1 chuỗi hằng để gán session
+
         private const string CartSession = "CartSession";
 
-        // GET: Cart/ : trang giỏ hàng
+
         public ActionResult Index()
         {
             var cart = Session[CartSession];
@@ -41,8 +41,7 @@ namespace WebBanSach.Controllers
             return View(list);
         }
 
-        //GET : /Cart/CartHeader : đếm sổ sản phẩm trong giỏ hàng
-        //PartialView : CartHeader
+
         public ActionResult CartHeader()
         {
             var cart = Session[CartSession];
@@ -55,13 +54,13 @@ namespace WebBanSach.Controllers
             return PartialView(list);
         }
 
-        //Xóa 1 sản phẩm trong giỏ hàng
+ 
         public JsonResult Delete(int id)
         {
             var sessionCart = (List<CartModel>)Session[CartSession];
-            //xóa những giá trị mà có mã sách giống với id
+   
             sessionCart.RemoveAll(x => x.sach.MaSach == id);
-            //gán lại giá trị cho session
+ 
             Session[CartSession] = sessionCart;
 
             return Json(new
@@ -70,7 +69,7 @@ namespace WebBanSach.Controllers
             });
         }
 
-        //Xóa tất cả các sản phẩm trong giỏ hàng
+   
         public JsonResult DeleteAll()
         {
             Session[CartSession] = null;
@@ -80,13 +79,12 @@ namespace WebBanSach.Controllers
             });
         }
 
-        //Cập nhật giỏ hàng
         public JsonResult Update(string cartModel)
         {
-            //tạo 1 đối tượng dạng json
+
             var jsonCart = new JavaScriptSerializer().Deserialize<List<CartModel>>(cartModel);
 
-            //ép kiểu từ session
+   
             var sessionCart = (List<CartModel>)Session[CartSession];
 
             foreach (var item in sessionCart)
@@ -97,7 +95,7 @@ namespace WebBanSach.Controllers
                     item.Quantity = jsonItem.Quantity;
                 }
             }
-            //cập nhật lại session
+
             Session[CartSession] = sessionCart;
 
             return Json(new
@@ -106,16 +104,15 @@ namespace WebBanSach.Controllers
             });
         }
 
-        //GET : /Cart/AddItem/?id=?&quantity=1 : thêm sản phẩm vào giỏ hàng
+   
         public ActionResult AddItem(int id, int quantity)
         {
-            //lấy mã sách và gán đối tượng
+ 
             var sach = new AdminProcess().GetIdBook(id);
 
-            //lấy giỏ hàng từ session
+
             var cart = Session[CartSession];
 
-            //nếu đã có sản phẩm trong giỏ hàng
             if (cart != null)
             {
                 var list = (List<CartModel>)cart;
@@ -132,46 +129,45 @@ namespace WebBanSach.Controllers
                 }
                 else
                 {
-                    //tạo mới đối tượng cart item
+           
                     var item = new CartModel();
                     item.sach = sach;
                     item.Quantity = quantity;
                     list.Add(item);
                 }
 
-                //Gán vào session
+               
                 Session[CartSession] = list;
             }
             else
             {
-                //tạo mới giỏ hàng
+                
                 var item = new CartModel();
                 item.sach = sach;
                 item.Quantity = quantity;
                 var list = new List<CartModel>();
                 list.Add(item);
 
-                //gán vào session
+            
                 Session[CartSession] = list;
             }
 
             return RedirectToAction("Index");
         }
 
-        //Thông tin khách hàng
+     
         [HttpGet]
         [ChildActionOnly]
         public PartialViewResult UserInfo()
         {
-            //lấy dữ liệu từ session
+         
             var model = Session["User"];
 
             if (ModelState.IsValid)
             {
-                //tìm tên tài khoản
+               
                 var result = db.KhachHangs.SingleOrDefault(x => x.TaiKhoan == model);
 
-                //trả về dữ liệu tương ứng
                 return PartialView(result);
             }
 
@@ -181,7 +177,7 @@ namespace WebBanSach.Controllers
         [HttpGet]
         public ActionResult Payment()
         {
-            //kiểm tra đăng nhập
+           
             if (Session["User"] == null || Session["User"].ToString() == "")
             {
                 return RedirectToAction("LoginPage", "User");
@@ -189,7 +185,7 @@ namespace WebBanSach.Controllers
 
             if (UserController.khachhangstatic.TrangThai == false)
             {
-                return RedirectToAction("ThongBaoKichHoat", "User");
+                return RedirectToAction("ActivationNotice", "User");
             }
             else
             {
@@ -216,15 +212,14 @@ namespace WebBanSach.Controllers
             var order = new DonDatHang();
             order.NgayDat = DateTime.Now;
             order.NgayGiao = DateTime.Now.AddDays(3);
-            order.TinhTrang = true; //đã nhận hàng
+            order.TinhTrang = true; 
             order.MaKH = MaKH;
             
             try
             {
                 if (PMethod == 1)
                 {
-                    //thêm dữ liệu vào đơn đặt hàng
-                    //order.ThanhToan = 1;
+
                     var result1 = new OrderProcess().Insert(order);
                     var cart = (List<CartModel>)Session[CartSession];
                     var result2 = new OderDetailProcess();
@@ -247,7 +242,6 @@ namespace WebBanSach.Controllers
                 }
                 else
                 {
-                    //order.ThanhToan = 0;
                     var result1 = new OrderProcess().Insert(order);
                     var cart = (List<CartModel>)Session[CartSession];
                     var result2 = new OderDetailProcess();
@@ -307,11 +301,11 @@ namespace WebBanSach.Controllers
 
             log.Debug("rawHash = " + rawHash);
             MoMoSecurity crypto = new MoMoSecurity();
-            //sign signature SHA256
+       
             string signature = crypto.signSHA256(rawHash, serectkey);
             log.Debug("Signature = " + signature);
 
-            //build body json request
+     
             JObject message = new JObject
             {
                 { "partnerCode", partnerCode },

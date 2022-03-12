@@ -12,22 +12,19 @@ namespace WebBanSach.Controllers
 {
     public class HomeController : Controller
     {
-        //Trang chủ chương trình
-
-        //Khởi tạo biến dữ liệu : db
+     
         BSDBContext db = new BSDBContext();
 
-        //GET : Home/ : trang chủ 
+   
         public ActionResult Index()
         {
             return View();
         }
 
-        //GET : /Home/ShowCategory : hiển thị danh mục phía bên trái trang chủ
-        //Parital View : Showcategory
+      
         public ActionResult ShowCategory()
         {
-            //gọi hàm xuất danh sách thể loại
+        
             var result = new HomeProcess().ListCategory();
 
             return PartialView(result);
@@ -42,14 +39,14 @@ namespace WebBanSach.Controllers
             return View(result);
         }
 
-        //GET : Show About page
+   
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
             return View();
         }
 
-        //Trang quy định của web
+      
         public ActionResult QuyDinh()
         {
             return View();
@@ -72,7 +69,7 @@ namespace WebBanSach.Controllers
             return View();
         }
 
-        //GET : /Home/Contact : trang liên hệ, phản hồi của khách hàng
+   
         [HttpGet]
         public ActionResult Contact()
         {
@@ -89,7 +86,7 @@ namespace WebBanSach.Controllers
                 var home = new HomeProcess();
                 var lh = new LienHe();
 
-                //gán dữ liệu từ client vào model
+  
                 lh.Ten = model.Ten;
                 lh.Ho = model.Ho;
                 lh.Email = model.Email;
@@ -97,7 +94,7 @@ namespace WebBanSach.Controllers
                 lh.NoiDung = model.NoiDung;
                 lh.NgayCapNhat = DateTime.Now;
 
-                //gọi hàm lưu thông tin phản hồi từ khách hàng
+
                 var result = home.InsertContact(lh);
 
                 if (result > 0)
@@ -115,13 +112,13 @@ namespace WebBanSach.Controllers
             return View(model);
         }
 
-        //GET : /Home/SearchResult : trang tìm kiếm sách
+   
         [HttpGet]
         public ActionResult SearchResult(int? page, string key)
         {
             ViewBag.Key = key;
 
-            //phân trang
+           
             int pageNumber = (page ?? 1);
             int pageSize = 6;
 
@@ -137,16 +134,16 @@ namespace WebBanSach.Controllers
             return View(result);
         }
 
-        //POST : /Home/SearchResult : thực hiện việc tìm kiếm sách
+        
         [HttpPost]
         public ActionResult SearchResult(int? page, FormCollection f)
         {
-            //gán từ khóa tìm kiếm được nhập từ client
+           
             string key = f["txtSearch"].ToString();
 
             ViewBag.Key = key;
 
-            //phân trang
+           
             int pageNumber = (page ?? 1);
             int pageSize = 6;
             

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\web</_PublishTargetUrl>
-    <History>True|2022-03-11T15:11:47.8306385Z;True|2022-03-11T20:58:45.4442199+07:00;True|2022-03-11T20:58:38.9665889+07:00;True|2022-03-09T11:29:58.0625452+07:00;True|2022-03-09T10:47:30.6239080+07:00;True|2022-03-09T10:05:20.8354101+07:00;True|2022-03-09T09:57:30.4041698+07:00;True|2022-03-08T22:28:31.3291607+07:00;</History>
+    <History>True|2022-03-12T04:58:17.0730982Z;True|2022-03-11T22:11:47.8306385+07:00;True|2022-03-11T20:58:45.4442199+07:00;True|2022-03-11T20:58:38.9665889+07:00;True|2022-03-09T11:29:58.0625452+07:00;True|2022-03-09T10:47:30.6239080+07:00;True|2022-03-09T10:05:20.8354101+07:00;True|2022-03-09T09:57:30.4041698+07:00;True|2022-03-08T22:28:31.3291607+07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -141,10 +141,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/05/2022 02:31:33</publishTime>
     </File>
     <File Include="bin/Project8.dll">
-      <publishTime>03/11/2022 22:11:46</publishTime>
+      <publishTime>03/12/2022 11:58:15</publishTime>
     </File>
     <File Include="bin/Project8.pdb">
-      <publishTime>03/11/2022 22:11:46</publishTime>
+      <publishTime>03/12/2022 11:58:15</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>03/05/2022 02:31:31</publishTime>
@@ -2823,7 +2823,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/05/2022 03:26:15</publishTime>
     </File>
     <File Include="Views/Book/FavoriteBook.cshtml">
-      <publishTime>03/05/2022 03:26:44</publishTime>
+      <publishTime>03/12/2022 11:08:46</publishTime>
     </File>
     <File Include="Views/Book/ShowAllBook.cshtml">
       <publishTime>03/08/2022 19:51:15</publishTime>
@@ -2838,7 +2838,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/07/2022 16:53:58</publishTime>
     </File>
     <File Include="Views/Cart/Payment.cshtml">
-      <publishTime>03/05/2022 13:21:42</publishTime>
+      <publishTime>03/12/2022 11:08:48</publishTime>
     </File>
     <File Include="Views/Cart/Success.cshtml">
       <publishTime>03/05/2022 03:19:55</publishTime>
@@ -2858,6 +2858,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Home/Contact.cshtml">
       <publishTime>03/08/2022 14:02:12</publishTime>
     </File>
+    <File Include="Views/Home/Delivery.cshtml">
+      <publishTime>03/09/2022 11:17:03</publishTime>
+    </File>
     <File Include="Views/Home/DoiTra.cshtml">
       <publishTime>03/09/2022 11:17:03</publishTime>
     </File>
@@ -2865,9 +2868,18 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/05/2022 03:07:24</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/09/2022 10:46:34</publishTime>
+      <publishTime>03/12/2022 11:58:09</publishTime>
+    </File>
+    <File Include="Views/Home/Paymentmethod.cshtml">
+      <publishTime>03/09/2022 11:17:03</publishTime>
     </File>
     <File Include="Views/Home/QuyDinh.cshtml">
+      <publishTime>03/09/2022 11:17:03</publishTime>
+    </File>
+    <File Include="Views/Home/Return.cshtml">
+      <publishTime>03/09/2022 11:17:03</publishTime>
+    </File>
+    <File Include="Views/Home/Rule.cshtml">
       <publishTime>03/09/2022 11:17:03</publishTime>
     </File>
     <File Include="Views/Home/SearchResult.cshtml">
@@ -2880,7 +2892,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/09/2022 11:17:03</publishTime>
     </File>
     <File Include="Views/Home/ThemesBook.cshtml">
-      <publishTime>03/08/2022 21:49:38</publishTime>
+      <publishTime>03/12/2022 11:58:09</publishTime>
     </File>
     <File Include="Views/Home/VanChuyen.cshtml">
       <publishTime>03/09/2022 11:17:03</publishTime>
@@ -2889,7 +2901,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/05/2022 02:32:22</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/08/2022 19:59:45</publishTime>
+      <publishTime>03/12/2022 11:08:48</publishTime>
+    </File>
+    <File Include="Views/User/ActivationNotice.cshtml">
+      <publishTime>03/05/2022 03:01:39</publishTime>
+    </File>
+    <File Include="Views/User/CheckActivationNotification.cshtml">
+      <publishTime>03/08/2022 21:49:38</publishTime>
     </File>
     <File Include="Views/User/EditUser.cshtml">
       <publishTime>03/07/2022 18:52:31</publishTime>

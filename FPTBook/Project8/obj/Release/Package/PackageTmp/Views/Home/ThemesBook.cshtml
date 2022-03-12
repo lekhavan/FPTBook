@@ -7,11 +7,10 @@
 <div class="row">
     <div class="col-md-3" style="border-radius: 8px; border: 1px solid #dea3a3; background-color: #515252;">
         <p style="text-align: center; margin: 5px;font-size: 25px;font-weight: 600;"><font style="color:yellowgreen;"> List Books</font></p>
-        @*Call partital view ShowCategory in Home*@
         @Html.Action("ShowCategory", "Home")
     </div>
     <div class="col-md-9">
-        @*sách theo chủ đề*@
+
         <h3 style="color:#087BB0">@ViewBag.TenLoai</h3>
         <hr />
         <div class="row">
@@ -40,6 +39,6 @@
                 </div>
             }
         </div>
-        @*kết thúc sách theo chủ đề*@
+
     </div>
 </div>

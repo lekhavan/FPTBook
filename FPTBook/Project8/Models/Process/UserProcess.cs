@@ -9,33 +9,19 @@ namespace WebBanSach.Models.Process
 {
     public class UserProcess
     {
-        //Tầng xử lý dữ liệu khách hàng
 
         BSDBContext db = null;
 
-        /// <summary>
-        /// Contructor
-        /// </summary>
         public UserProcess()
         {
             db = new BSDBContext();
         }
 
-        /// <summary>
-        /// hàm lấy mã khách hàng
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>KhachHang</returns>
         public KhachHang GetIdUser(int id)
         {
             return db.KhachHangs.Find(id);
         }
 
-        /// <summary>
-        /// Hàm thêm khách hàng mới
-        /// </summary>
-        /// <param name="entity">KhachHang</param>
-        /// <returns>int</returns>
         public int InsertUser(KhachHang entity)
         {
             db.KhachHangs.Add(entity);
@@ -43,12 +29,6 @@ namespace WebBanSach.Models.Process
             return entity.MaKH;
         }
 
-        /// <summary>
-        /// hàm đăng nhập của khách hàng
-        /// </summary>
-        /// <param name="username">string</param>
-        /// <param name="password">string</param>
-        /// <returns>int</returns>
         public int Login(string username, string password)
         {
             var result = db.KhachHangs.SingleOrDefault(x => x.TaiKhoan == username);
@@ -69,12 +49,6 @@ namespace WebBanSach.Models.Process
             }
         }
 
-        /// <summary>
-        /// hàm kiểm tra đã tồn tại tài khoản trong db
-        /// </summary>
-        /// <param name="username">string</param>
-        /// <param name="password">string</param>
-        /// <returns>int</returns>
         public int CheckUsername(string username,string password)
         {
             var result = db.KhachHangs.SingleOrDefault(x => x.TaiKhoan == username);
@@ -92,11 +66,6 @@ namespace WebBanSach.Models.Process
             }
         }
 
-        /// <summary>
-        /// hàm lưu thông tin cập nhật khách hàng
-        /// </summary>
-        /// <param name="entity">KhachHang</param>
-        /// <returns>int</returns>
         public int UpdateUser(KhachHang entity)
         {
             try

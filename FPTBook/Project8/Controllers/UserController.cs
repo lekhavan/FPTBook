@@ -15,24 +15,24 @@ namespace WebBanSach.Controllers
 {
     public class UserController : Controller
     {
-        //Khởi tạo biến dữ liệu : db
+       
         BSDBContext db = new BSDBContext();
         public static KhachHang khachhangstatic;
         [HttpGet]
-        // GET: User
+      
         public ActionResult Index()
         {
             return View();
         }
 
-        //GET: /User/Register : đăng kí tài khoản thành viên
+        
         public ActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
-        //POST: /User/Register : thực hiện lưu dữ liệu đăng ký tài khoản thành viên
+        
         public ActionResult Register(KhachHang model)
         {
             if (ModelState.IsValid)
@@ -67,11 +67,9 @@ namespace WebBanSach.Controllers
                     BuildUserTemplate(idUser.MaKH);
                     if (result > 0)
                     {
-                        //Session["User"] = result;
+                        
                         ModelState.Clear();
-                        //return Redirect("/Home/");
-                        //ModelState.AddModelError("", "Vui Lòng Check Email Kích Hoạt Tài Khoản !");
-                        return RedirectToAction("KiemTraThongBaoKichHoat", "User");
+                        return RedirectToAction("CheckActivationNotification", "User");
                     }
                     else
                     {
@@ -162,59 +160,57 @@ namespace WebBanSach.Controllers
             }*/
         }
 
-        public ActionResult ThongBaoKichHoat()
+        public ActionResult ActivationNotice()
         {
             return View();
         }
-        public ActionResult KiemTraThongBaoKichHoat()
+        public ActionResult checkactivationnotification()
         {
             return View();
         }
-        //GET : /User/LoginPage : trang đăng nhập
+
 
         public ActionResult LoginPage()
         {
             return View();
         }
 
-        //POST : /User/LoginPage : thực hiện đăng nhập
         [HttpPost]
         public ActionResult LoginPage(LoginModel model)
         {
-            //kiểm tra hợp lệ dữ liệu
+            
             if (ModelState.IsValid)
             {
-                //gọi hàm đăng nhập trong AdminProcess và gán dữ liệu trong biến model
+                
                 var result = new UserProcess().Login(model.TaiKhoan, model.MatKhau);
-                //Nếu đúng
+               
                 if (result == 1)
                 {
-                    //gán Session["LoginAdmin"] bằng dữ liệu đã đăng nhập
+                    
                     Session["User"] = model.TaiKhoan;
                     var kh = db.KhachHangs.Where(x => x.TaiKhoan == model.TaiKhoan).FirstOrDefault();
                     khachhangstatic = kh;
-                    //trả về trang chủ
+                   
                     return RedirectToAction("Index", "Home");
                 }
-                //nếu tài khoản không tồn tại
+                
                 else if (result == 0)
                 {
                     ModelState.AddModelError("", "Account does not exist.");
-                    //return RedirectToAction("LoginPage", "User");
+                    
                 }
-                //nếu nhập sai tài khoản hoặc mật khẩu
+               
                 else if (result == -1)
                 {
                     ModelState.AddModelError("", "Incorrect account or password");
-                    //return RedirectToAction("LoginPage", "User");
+                    
                 }
             }
 
             return View();
         }
 
-        //GET : /User/Login : đăng nhập tài khoản
-        //Parital View : Login
+ 
         
         [ChildActionOnly]
         public ActionResult Login()
@@ -222,45 +218,44 @@ namespace WebBanSach.Controllers
             return PartialView();
         }
 
-        //POST : /User/Login : thực hiện đăng nhập
+       
         [HttpPost]
         [ChildActionOnly]
         public ActionResult Login(LoginModel model)
         {
-            //kiểm tra hợp lệ dữ liệu
+            
             if (ModelState.IsValid)
             {
-                //gọi hàm đăng nhập trong AdminProcess và gán dữ liệu trong biến model
+                
                 var result = new UserProcess().Login(model.TaiKhoan, model.MatKhau);
 
-                //Nếu đúng
+               
                 if (result == 1)
                 {
-                    //gán Session["LoginAdmin"] bằng dữ liệu đã đăng nhập
+                    
                     Session["User"] = model.TaiKhoan;
                     var kh = db.KhachHangs.Where(x => x.TaiKhoan == model.TaiKhoan).FirstOrDefault();
                     khachhangstatic = kh;
-                    //trả về trang chủ
+                  
                     return RedirectToAction("Index", "Home");
                 }
-                //nếu tài khoản không tồn tại
+                
                 else if (result == 0)
                 {
                     ModelState.AddModelError("", "Account does not exist.");
-                    //return RedirectToAction("LoginPage", "User");
+                  
                 }
-                //nếu nhập sai tài khoản hoặc mật khẩu
+             
                 else if (result == -1)
                 {
                     ModelState.AddModelError("", "Incorrect account or password");
-                    //return RedirectToAction("LoginPage", "User");
+                  
                 }
             }
 
             return PartialView();
         }
 
-        //GET : /User/Logout : đăng xuất tài khoản khách hàng
         [HttpGet]
         public ActionResult Logout()
         {
@@ -269,35 +264,34 @@ namespace WebBanSach.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //GET : /User/EditUser : cập nhật thông tin khách hàng
+       
         [HttpGet]
         public ActionResult EditUser()
         {
-            //lấy dữ liệu từ session
+            
             var model = Session["User"];
 
             if (ModelState.IsValid)
             {
-                //tìm tên tài khoản
+                
                 var result = db.KhachHangs.SingleOrDefault(x => x.TaiKhoan == model);
 
-                //trả về dữ liệu tương ứng
+                
                 return View(result);
             }
 
             return View();
         }
 
-        //POST : /User/EditUser : thực hiện việc cập nhật thông tin khách hàng
-        [HttpPost]
+       
         public ActionResult EditUser(KhachHang model)
         {
             if (ModelState.IsValid)
             {
-                //gọi hàm cập nhật thông tin khách hàng
+               
                 var result = new UserProcess().UpdateUser(model);
 
-                //thực hiện kiểm tra
+                
                 if (result == 1)
                 {
                     return RedirectToAction("EditUser");                  
